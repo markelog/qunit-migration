@@ -76,7 +76,8 @@ export default function migration(input) {
         numberLiteral,
         new Token('Whitespace', ' '),
         new Token('Punctuator', ')')
-      ])
+      ]),
+      new Token('Punctuator', ';')
     ]);
 
     let end = new Token('Whitespace', '\n');
@@ -86,7 +87,6 @@ export default function migration(input) {
       new Fragment([
         start,
         expression,
-        new Token('Whitespace', ';'),
         end
       ]),
       elem
