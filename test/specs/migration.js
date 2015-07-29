@@ -29,7 +29,7 @@ expect( 1 );
       expect(migration(input)).to.equal(output);
     });
 
-    it('should asd', () => {
+    it('should handle newline in funarg', () => {
       let input = `
 test( "prop('tabindex', value)", 10, function() {
 
