@@ -4,21 +4,21 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel lib/index.js -o index.js",
-    "eslint": "eslint lib test",
-    "jscs": "jscs lib test",
+    "build": "babel src -d lib",
+    "eslint": "eslint src test",
+    "jscs": "jscs src test",
     "lint": "npm run jscs && npm run eslint",
     "test": "npm run lint && mocha",
-    "build": "babel src -d lib",
     "live": "mocha --watch"
   },
-  "author": "",
+  "author": "Oleg Gaidarenko <markelog@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "chai": "^3.2.0",
-    "cst": "0.0.6"
+    "cst": "0.0.6",
+    "glob": "^5.0.14"
   },
   "devDependencies": {
+    "chai": "^3.2.0",
     "babel": "^5.8.9",
     "eslint": "^0.24.1",
     "jscs": "^2.0.0",

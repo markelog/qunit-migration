@@ -7,14 +7,24 @@ import {
 
 import path from 'path';
 
+import glob from 'glob';
+
 export function paths(ps) {
-  return ps.map((p) => {
-    return path.join(__dirname, '..', p);
+  let result = [];
+
+  ps.forEach((p) => {
+    p = path.join(process.cwd(), p);
+
+    glob.sync(p).forEach((res) => result.push(res));
   });
+
+  return result;
 }
 
-export default function reader(ps) {
-  paths(ps).forEach(function(p) {
+export function migrate(ps) {
+  ps = Array.isArray(ps) ? ps : [ps];
+
+  paths(ps).forEach((p) => {
     write(
       p,
       migration(

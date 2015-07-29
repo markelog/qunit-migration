@@ -1,4 +1,4 @@
-import migration from '../../lib/migration';
+import migration from '../../src/migration';
 import {expect} from 'chai';
 
 describe('lib/migration', () => {
@@ -25,6 +25,24 @@ expect( 1 );
 
       equal("test");
     })`;
+
+      expect(migration(input)).to.equal(output);
+    });
+
+    it('should asd', () => {
+      let input = `
+test( "prop('tabindex', value)", 10, function() {
+
+  var clone,
+    element = jQuery("#divWithNoTabIndex");
+  });`;
+      let output = `
+test( "prop('tabindex', value)", function() {
+  expect( 10 );
+
+  var clone,
+    element = jQuery("#divWithNoTabIndex");
+  });`;
 
       expect(migration(input)).to.equal(output);
     });

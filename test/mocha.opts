@@ -1,2 +1,3 @@
 test/specs/*.js
+--recursive
 --compilers js:babel/register
