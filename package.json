@@ -1,0 +1,26 @@
+{
+  "name": "expecter",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel lib/index.js -o index.js",
+    "eslint": "eslint lib test",
+    "jscs": "jscs lib test",
+    "lint": "npm run jscs && npm run eslint",
+    "test": "npm run lint && mocha",
+    "live": "mocha --watch"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^3.2.0",
+    "cst": "0.0.6"
+  },
+  "devDependencies": {
+    "babel": "^5.8.9",
+    "eslint": "^0.24.1",
+    "jscs": "^2.0.0",
+    "mocha": "^2.2.5"
+  }
+}
