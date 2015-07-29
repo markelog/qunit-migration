@@ -2,13 +2,14 @@
   "name": "qunit-migration",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "babel lib/index.js -o index.js",
     "eslint": "eslint lib test",
     "jscs": "jscs lib test",
     "lint": "npm run jscs && npm run eslint",
     "test": "npm run lint && mocha",
+    "build": "babel src -d lib",
     "live": "mocha --watch"
   },
   "author": "",
